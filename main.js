@@ -52,4 +52,22 @@ function newCard (i){
     </div>
   </div>`;
   allCards.insertAdjacentHTML('beforeend', html);
+};
+
+// aggiungo funzione dei nuovi membri
+function member() {
+  const newName = document.getElementById("name").value;
+  const newRole = document.getElementById("role").value;
+  const newImage = document.getElementById("image").value;
+  const newMember = {
+    name: newName,
+    role: newRole,
+    image: newImage,
+  };
+  // pusho il nuovo membro del team
+  team.push(newMember);
+  newCard(team.length-1);
+  document.getElementById("name").value = "";
+  document.getElementById("role").value = "";
+  document.getElementById("image").value = "";
 }
